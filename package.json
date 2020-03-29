@@ -10,7 +10,6 @@
     "prepare": "./scripts/publish.sh",
     "test": "echo 'porumai ... will setup tests'",
     "build": "rollup -c",
-    "prepublishOnly": "npm run build",
     "pull-submodules": "git submodule foreach git pull origin master",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
