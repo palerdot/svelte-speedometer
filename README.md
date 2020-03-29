@@ -4,7 +4,6 @@
 
 [![Build Status](https://travis-ci.org/palerdot/svelte-speedometer.svg?branch=master)](https://travis-ci.org/palerdot/svelte-speedometer)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
-![npm](https://img.shields.io/npm/dt/svelte-speedometer.svg)
 
 [![NPM](https://nodei.co/npm/svelte-speedometer.png)](https://npmjs.org/package/svelte-speedometer)
 
