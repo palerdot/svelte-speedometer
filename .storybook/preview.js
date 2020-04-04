@@ -1,14 +1,10 @@
 import { addParameters } from "@storybook/svelte"
-import { themes } from "@storybook/theming"
 import { create } from "@storybook/theming/create"
 
-const speedoTheme = create({
-  base: "dark",
+import theme from "../src/core/theme"
 
-  appBg: "#413c69",
-  appContentBg: "#2a2744",
-  barBg: "#373359",
-  // appContentBg: "#413c69",
+const speedoTheme = create({
+  ...theme,
 
   brandTitle: "svelte-speedometer",
   brandUrl: "https://github.com/palerdot/svelte-speedometer",
