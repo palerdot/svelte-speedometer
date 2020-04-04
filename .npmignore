@@ -3,6 +3,7 @@ stories
 .storybook
 
 .scripts
+scripts
 
 .git
 .gitmodules
