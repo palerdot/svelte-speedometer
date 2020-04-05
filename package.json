@@ -10,7 +10,7 @@
     "prepare": "./scripts/publish.sh",
     "prepack": "./scripts/prepack.sh",
     "postpack": "./scripts/postpack.sh",
-    "test": "jest --verbose --runInBand",
+    "test": "jest --verbose",
     "build": "rollup -c",
     "pull-submodules": "git submodule foreach git pull origin master",
     "storybook": "start-storybook -p 6006",
