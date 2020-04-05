@@ -87,4 +87,4 @@
 </script>
 
 <!-- Speedometer markup -->
-<div bind:this={gaugeDiv} />
+<div bind:this={gaugeDiv} id="speedo-container" />

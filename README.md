@@ -238,8 +238,8 @@ You can give a value between `0` and `1` to control the needle height.
 
 ### Todos:
 
-- [] Test coverage
-- [] Typescript support
+- [x] Test coverage (with `@testing-library/svelte`)
+- [x] Typescript support (Note: type definitions for props are available [here](/src/index.d.ts). As of this writing, I cannot find the official svelte component official types. It will be updated as it is made available)
 
 ---
 
