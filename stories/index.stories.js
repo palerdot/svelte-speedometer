@@ -1,5 +1,5 @@
 // DEV build
-import Speedometer from "../src/Speedometer.svelte"
+import Speedometer from "../src/"
 // PROD build
 // import Speedometer from "../dist/index.mjs"
 
