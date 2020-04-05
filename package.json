@@ -36,12 +36,9 @@
     "babel-jest": "^25.2.6",
     "babel-loader": "^8.1.0",
     "babel-plugin-lodash": "^3.3.4",
-    "d3": "^5.15.0",
     "git-url-parse": "^11.1.2",
     "jest": "^25.2.7",
     "jest-transform-svelte": "^2.1.1",
-    "lodash-es": "^4.17.15",
-    "memoize-one": "^5.1.1",
     "prettier": "^2.0.2",
     "prettier-eslint": "^9.0.1",
     "rollup": "^1.20.0",
@@ -50,6 +47,11 @@
     "svelte": "^3.20.1",
     "svelte-jester": "^1.0.5",
     "svelte-loader": "^2.13.6"
+  },
+  "dependencies": {
+    "lodash-es": "^4.17.15",
+    "memoize-one": "^5.1.1",
+    "d3": "^5.15.0"
   },
   "keywords": [
     "svelte",
@@ -62,6 +64,5 @@
     "dist"
   ],
   "author": "palerdot",
-  "license": "MIT",
-  "dependencies": {}
+  "license": "MIT"
 }
