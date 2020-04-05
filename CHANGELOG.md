@@ -1,4 +1,10 @@
 # Change Log
 
+## 1.0.1
+- [`CORE`][`0.11.0`]
+- Added `src` to final build for `svelte` app consumers
+- Fixed bundling issues with `lodash` by moving to `lodash-es`
+- tests
+
 ## 1.0.0
 - Library launch
