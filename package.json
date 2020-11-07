@@ -12,6 +12,7 @@
     "postpack": "./scripts/postpack.sh",
     "test": "jest --verbose",
     "build": "rollup -c",
+    "init-submodule": "git submodule update --init",
     "pull-submodules": "git submodule foreach git pull origin master",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
