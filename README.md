@@ -252,7 +252,7 @@ You can give a value between `0` and `1` to control the needle height.
 
 ### Tests:
 
-`svelte-speedometer` comes with a test suite using [enzyme](https://github.com/airbnb/enzyme).
+`svelte-speedometer` comes with a test suite using `@testing-library/svelte`.
 
 ```javascript
 // navigate to root folder and run
