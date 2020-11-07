@@ -263,6 +263,7 @@ npm test
 ---
 
 #### Feature Updates:
+- [`v1.1.0`] `valueTextFontWeight` prop. ref: https://svelte.dev/repl/c7e2f081bce34508b07265d6d12cca65?version=3.29.4
 - [`v1.0.0`] `svelte-speedometer` initial launch
 
 #### Changelog:
