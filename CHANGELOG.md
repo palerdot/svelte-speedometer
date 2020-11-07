@@ -1,5 +1,10 @@
 # Change Log
 
+## 1.1.0
+- [`CORE`][0.14.1]
+- `Transition` type
+- `valueTextFontWeight` prop from 'CORE'
+
 ## 1.0.2
 - `d3`, `lodash-es`, `memoize-one` listed as `dependencies`.
 
