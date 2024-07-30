@@ -27,7 +27,7 @@
     "init-submodule": "git submodule update --init",
     "pull-submodules": "git submodule foreach git pull origin master",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
+    "build-storybook": "storybook build -o .out",
     "publish-storybook": "bash ./scripts/publish_storybook.sh",
     "make-build": "npm run build && cp ./src/index.d.ts ./dist/"
   },
