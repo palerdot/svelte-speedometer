@@ -68,5 +68,6 @@
     "dist"
   ],
   "author": "palerdot",
-  "license": "MIT"
+  "license": "MIT",
+  "packageManager": "pnpm@9.6.0"
 }
