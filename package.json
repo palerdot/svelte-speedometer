@@ -28,8 +28,7 @@
     "pull-submodules": "git submodule foreach git pull origin master",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build -o .out",
-    "publish-storybook": "bash ./scripts/publish_storybook.sh",
-    "make-build": "npm run build && cp ./src/index.d.ts ./dist/"
+    "publish-storybook": "bash ./scripts/publish_storybook.sh"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^8.2.6",
