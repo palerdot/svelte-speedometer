@@ -85,7 +85,7 @@
         labelFormat: d3Format(PROPS.valueFormat || ""),
         // consider custom value formatter if changed
         segmentValueFormatter:
-          props.segmentValueFormatter || defaultSegmentValueFormatter,
+          PROPS.segmentValueFormatter || defaultSegmentValueFormatter,
         currentValueText: PROPS.currentValueText || "${value}",
       })
     }
