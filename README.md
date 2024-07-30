@@ -9,6 +9,8 @@
 
 ![svelte-speedometer](https://raw.githubusercontent.com/palerdot/svelte-speedometer/master/speedo.gif)
 
+**NOTE:** If you are using `Svelte v5`, please use upcoming `v3.0`.`v2.0` is compatible with `Svelte` `v3` or `v4`.
+
 ## Usage:
 
 **Yarn:**
