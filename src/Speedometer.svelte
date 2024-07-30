@@ -1,7 +1,14 @@
 <script>
   import { onMount, afterUpdate } from "svelte"
-  import { format as d3Format, select as d3Select } from "d3"
-  import { getConfig, updateConfig, DEFAULT_PROPS } from "./core/config"
+  import { format as d3Format } from "d3-format"
+  import { select as d3Select } from "d3-selection"
+
+  import {
+    getConfig,
+    updateConfig,
+    defaultSegmentValueFormatter,
+    DEFAULT_PROPS,
+  } from "./core/config"
   import { render, update } from "./core/render"
 
   // PROP exports
@@ -36,9 +43,7 @@
       parentHeight: gaugeDiv.parentNode.clientHeight,
     })
     // remove existing gauge (if any)
-    d3Select(gaugeDiv)
-      .select("svg")
-      .remove()
+    d3Select(gaugeDiv).select("svg").remove()
 
     d3_refs = render({
       container: gaugeDiv,
@@ -78,6 +83,9 @@
       // new config
       config = updateConfig(config, {
         labelFormat: d3Format(PROPS.valueFormat || ""),
+        // consider custom value formatter if changed
+        segmentValueFormatter:
+          props.segmentValueFormatter || defaultSegmentValueFormatter,
         currentValueText: PROPS.currentValueText || "${value}",
       })
     }

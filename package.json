@@ -3,6 +3,7 @@
   "version": "2.0.0",
   "description": "Svelte component for showing speedometer like gauge using d3",
   "repository": "https://github.com/palerdot/svelte-speedometer",
+  "type": "module",
   "svelte": "src/index.js",
   "module": "dist/index.mjs",
   "main": "dist/index.js",
@@ -50,9 +51,17 @@
     "svelte-loader": "^2.13.6"
   },
   "dependencies": {
-    "d3": "^5.15.0",
+    "d3-array": "^3.1.4",
+    "d3-color": "^3.1.0",
+    "d3-ease": "^3.0.1",
+    "d3-format": "^3.1.0",
+    "d3-interpolate": "^3.0.1",
+    "d3-scale": "^4.0.2",
+    "d3-selection": "^3.0.0",
+    "d3-shape": "^3.1.0",
+    "d3-transition": "^3.0.1",
     "lodash-es": "^4.17.15",
-    "memoize-one": "^5.1.1"
+    "memoize-one": "^6.0.0"
   },
   "peerDependencies": {
     "svelte": "^3.0.0 || ^4.0.0"
