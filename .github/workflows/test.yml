@@ -16,7 +16,8 @@ jobs:
 
       # https://phoenixnap.com/kb/git-checkout-submodule
       - name: Checkout submodules
-        run: git submodule update --init --recursive
+        # run: git submodule update --init --recursive --depth=1
+        run: git submodule update --init --depth=1
 
       - uses: pnpm/action-setup@v4
         name: Install pnpm
