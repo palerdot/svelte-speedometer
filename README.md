@@ -2,16 +2,19 @@
 
 **svelte-speedometer** is a react component library for showing speedometer like gauge using d3.
 
-[![CircleCI Build Status](https://circleci.com/gh/palerdot/svelte-speedometer.svg?style=svg)](https://circleci.com/gh/palerdot/svelte-speedometer)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
-
-[![NPM](https://nodei.co/npm/svelte-speedometer.png)](https://npmjs.org/package/svelte-speedometer)
+[![Github](https://github.com/palerdot/svelte-speedometer/actions/workflows/test.yml/badge.svg)](https://github.com/palerdot/svelte-speedometer/actions/workflows/test.yml/badge.svg)
+[![npm version](https://badge.fury.io/js/svelte-speedometer.svg)](https://badge.fury.io/js/svelte-speedometer)
 
 ![svelte-speedometer](https://raw.githubusercontent.com/palerdot/svelte-speedometer/master/speedo.gif)
 
-**NOTE:** If you are using `Svelte v5`, please use upcoming `v3.0`.`v2.0` is compatible with `Svelte` `v3` or `v4`.
+
+**IMPORTANT:** If you are using `Svelte v5`, please use `v3.0`.`v2.0` is compatible with `Svelte v3 or v4`.
 
 ## Usage:
+
+**pnpm**
+`pnpm add svelte-speedometer`
 
 **Yarn:**
 `yarn add svelte-speedometer` 
