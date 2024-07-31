@@ -1,10 +1,14 @@
 # Change Log
 
-## v3.0
+## v3.0.1
+
+- `Svelte v5.0.0-next` as peer dependency along with `v5.0.0`
+
+## v3.0.0
 
 - `Svelte v5 support`
 
-## v2.0
+## v2.0.0
 
 - `Svelte v4 / v3` support
 
