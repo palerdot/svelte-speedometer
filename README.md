@@ -1,6 +1,6 @@
 # svelte-speedometer
 
-**svelte-speedometer** is a react component library for showing speedometer like gauge using d3.
+**svelte-speedometer** is a svelte component library for showing speedometer like gauge using d3.
 
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 [![Github](https://github.com/palerdot/svelte-speedometer/actions/workflows/test.yml/badge.svg)](https://github.com/palerdot/svelte-speedometer/actions/workflows/test.yml/badge.svg)
