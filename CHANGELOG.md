@@ -1,5 +1,13 @@
 # Change Log
 
+## v3.0
+
+- `Svelte v5 support`
+
+## v2.0
+
+- `Svelte v4 / v3` support
+
 ## 1.1.0
 - [`CORE`][0.14.1]
 - `Transition` type
