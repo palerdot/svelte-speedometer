@@ -1,4 +1,3 @@
-import { addParameters } from "@storybook/svelte"
 import { create } from "@storybook/theming/create"
 
 import theme from "../src/core/theme"
@@ -10,7 +9,7 @@ const speedoTheme = create({
   brandUrl: "https://github.com/palerdot/svelte-speedometer",
 })
 
-addParameters({
+export const parameters = {
   options: {
     /**
      * display the top-level grouping as a "root" in the sidebar
@@ -23,4 +22,5 @@ addParameters({
   docs: {
     previewSource: "open",
   },
-})
+}
+export const tags = ["autodocs"];

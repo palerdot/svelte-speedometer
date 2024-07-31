@@ -3,59 +3,77 @@
   "version": "2.0.0",
   "description": "Svelte component for showing speedometer like gauge using d3",
   "repository": "https://github.com/palerdot/svelte-speedometer",
-  "svelte": "src/index.js",
-  "module": "dist/index.mjs",
+  "type": "module",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "svelte": "./dist/index.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "svelte": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
   "scripts": {
     "prepare": "./scripts/publish.sh",
     "prepack": "./scripts/prepack.sh",
     "postpack": "./scripts/postpack.sh",
-    "test": "jest --verbose",
-    "build": "rollup -c",
+    "test": "vitest",
+    "build": "svelte-package --input ./src && publint --strict",
     "init-submodule": "git submodule update --init",
     "pull-submodules": "git submodule foreach git pull origin master",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
-    "publish-storybook": "bash ./scripts/publish_storybook.sh",
-    "make-build": "npm run build && cp ./src/index.d.ts ./dist/"
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build -o .out",
+    "publish-storybook": "bash ./scripts/publish_storybook.sh"
   },
   "devDependencies": {
-    "@babel/cli": "^7.8.4",
-    "@babel/core": "^7.9.0",
-    "@babel/plugin-transform-runtime": "^7.9.0",
-    "@babel/preset-env": "^7.9.0",
-    "@rollup/plugin-commonjs": "^11.0.2",
-    "@rollup/plugin-node-resolve": "^6.0.0",
-    "@storybook/addon-actions": "^5.3.17",
-    "@storybook/addon-docs": "^5.3.17",
-    "@storybook/addon-links": "^5.3.17",
-    "@storybook/addon-storysource": "^5.3.17",
-    "@storybook/addons": "^5.3.17",
-    "@storybook/svelte": "^5.3.17",
-    "@testing-library/jest-dom": "^5.3.0",
-    "@testing-library/svelte": "^3.0.0",
-    "babel-jest": "^25.2.6",
-    "babel-loader": "^8.1.0",
-    "babel-plugin-lodash": "^3.3.4",
-    "git-url-parse": "^11.1.2",
-    "jest": "^25.2.7",
-    "jest-transform-svelte": "^2.1.1",
-    "prettier": "^2.0.2",
-    "prettier-eslint": "^9.0.1",
-    "rollup": "^1.20.0",
-    "rollup-plugin-babel": "^4.4.0",
-    "rollup-plugin-svelte": "^5.0.0",
-    "svelte": "^3.20.1",
-    "svelte-jester": "^1.0.5",
-    "svelte-loader": "^2.13.6"
+    "@storybook/addon-actions": "^8.2.6",
+    "@storybook/addon-docs": "^8.2.6",
+    "@storybook/addon-links": "^8.2.6",
+    "@storybook/addon-storysource": "^8.2.6",
+    "@storybook/manager-api": "^8.2.6",
+    "@storybook/svelte": "^8.2.6",
+    "@storybook/svelte-vite": "^8.2.6",
+    "@storybook/theming": "^8.2.6",
+    "@sveltejs/package": "^2.3.2",
+    "@sveltejs/vite-plugin-svelte": "^3.1.1",
+    "@testing-library/jest-dom": "^6.4.8",
+    "@testing-library/svelte": "^5.2.1",
+    "eslint": "^9.8.0",
+    "eslint-plugin-svelte": "^2.43.0",
+    "globals": "^15.8.0",
+    "happy-dom": "^14.12.3",
+    "prettier": "^3.3.3",
+    "prettier-plugin-svelte": "^3.2.6",
+    "publint": "^0.2.9",
+    "storybook": "^8.2.6",
+    "svelte": "5.0.0-next.203",
+    "svelte-check": "^3.8.4",
+    "svelte-eslint-parser": "^0.41.0",
+    "typescript": "^5.5.4",
+    "typescript-eslint": "^8.0.0-alpha.55",
+    "vite": "^5.3.5",
+    "vitest": "^2.0.4"
   },
   "dependencies": {
-    "d3": "^5.15.0",
+    "d3-array": "^3.1.4",
+    "d3-color": "^3.1.0",
+    "d3-ease": "^3.0.1",
+    "d3-format": "^3.1.0",
+    "d3-interpolate": "^3.0.1",
+    "d3-scale": "^4.0.2",
+    "d3-selection": "^3.0.0",
+    "d3-shape": "^3.1.0",
+    "d3-transition": "^3.0.1",
     "lodash-es": "^4.17.15",
-    "memoize-one": "^5.1.1"
+    "memoize-one": "^6.0.0"
   },
   "peerDependencies": {
-    "svelte": "^3.0.0 || ^4.0.0"
+    "svelte": "^5.0.0"
   },
   "keywords": [
     "svelte",
@@ -63,10 +81,7 @@
     "d3",
     "gauge"
   ],
-  "files": [
-    "src",
-    "dist"
-  ],
   "author": "palerdot",
-  "license": "MIT"
+  "license": "MIT",
+  "packageManager": "pnpm@9.6.0"
 }

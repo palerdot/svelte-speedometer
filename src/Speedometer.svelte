@@ -1,26 +1,33 @@
 <script>
-  import { onMount, afterUpdate } from "svelte"
-  import { format as d3Format, select as d3Select } from "d3"
-  import { getConfig, updateConfig, DEFAULT_PROPS } from "./core/config"
-  import { render, update } from "./core/render"
+  import { onMount } from "svelte"
+  import { format as d3Format } from "d3-format"
+  import { select as d3Select } from "d3-selection"
 
-  // PROP exports
-  export let forceRender = false
+  import {
+    getConfig,
+    updateConfig,
+    defaultSegmentValueFormatter,
+    DEFAULT_PROPS,
+  } from "./core/config/index.js"
+  import { render, update } from "./core/render/index.js"
 
-  // STATE
-  // track if component is mounted
-  let isMounted = false
+  // START: Runes
+  const props = $props()
+  // state
+  const forceRender = $state.frozen(props.forceRender)
+  let isMounted = $state(false)
+  //END: Runes
 
+  // state that is passed to core, hence not runes/reactive
   let config = {}
   let PROPS = {}
-
-  let gaugeDiv = undefined
-
   // list of d3 refs to share within the components
   let d3_refs = {
     pointer: false,
     current_value_text: false,
   }
+
+  let gaugeDiv = undefined
 
   // ******************************************************
 
@@ -28,7 +35,7 @@
 
   // just mount the gauge (without updating)
   function mountGauge() {
-    PROPS = Object.assign({}, DEFAULT_PROPS, $$restProps)
+    PROPS = Object.assign({}, DEFAULT_PROPS, props)
 
     config = getConfig({
       PROPS,
@@ -36,9 +43,7 @@
       parentHeight: gaugeDiv.parentNode.clientHeight,
     })
     // remove existing gauge (if any)
-    d3Select(gaugeDiv)
-      .select("svg")
-      .remove()
+    d3Select(gaugeDiv).select("svg").remove()
 
     d3_refs = render({
       container: gaugeDiv,
@@ -61,30 +66,32 @@
     mountGauge()
   })
 
-  afterUpdate(() => {
-    // on update, check if 'forceRender' option is present
-    if (forceRender) {
+  $effect(() => {
+    // mount the gauge again on update if 'forceRender'
+    if (isMounted && forceRender) {
       mountGauge()
     }
 
-    // first time when 'afterUpdate' is called it will not be mounted
+    // track if component mounted state
     if (!isMounted) {
       isMounted = true
-      // will use PROPS and config set by 'mountGauge'
-    } else {
-      // update props and config
-      PROPS = Object.assign({}, DEFAULT_PROPS, $$restProps)
-
-      // new config
-      config = updateConfig(config, {
-        labelFormat: d3Format(PROPS.valueFormat || ""),
-        currentValueText: PROPS.currentValueText || "${value}",
-      })
     }
+
+    // update props and config
+    PROPS = Object.assign({}, DEFAULT_PROPS, props)
+
+    // new config
+    config = updateConfig(config, {
+      labelFormat: d3Format(PROPS.valueFormat || ""),
+      // consider custom value formatter if changed
+      segmentValueFormatter:
+        PROPS.segmentValueFormatter || defaultSegmentValueFormatter,
+      currentValueText: PROPS.currentValueText || "${value}",
+    })
 
     updateGauge()
   })
 </script>
 
 <!-- Speedometer markup -->
-<div bind:this={gaugeDiv} id="speedo-container" />
+<div bind:this={gaugeDiv} id="speedo-container"></div>

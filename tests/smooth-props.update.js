@@ -1,6 +1,7 @@
-import SmoothUpdateComponent from "./SmoothPropUpdate.svelte"
-
+import { describe, test, expect,afterEach} from "vitest"
 import { render, act, cleanup, fireEvent } from "@testing-library/svelte"
+
+import SmoothUpdateComponent from "./SmoothPropUpdate.svelte"
 
 // import validators
 import {

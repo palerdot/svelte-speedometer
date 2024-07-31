@@ -252,9 +252,48 @@ export const ConfiguringTheFormatForValuesDisplayed = () => ({
   },
 })
 
+function segmentValueFormatter(value) {
+  if (value < 200) {
+    return `${value} 😒`
+  }
+  if (value < 400) {
+    return `${value} 😐`
+  }
+  if (value < 600) {
+    return `${value} 😌`
+  }
+  if (value < 800) {
+    return `${value} 😊`
+  }
+  if (value < 900) {
+    return `${value} 😉`
+  }
+
+  return `${value} 😇`
+}
+
+export const CustomSegmentValueFormatter = () => ({
+  Usage: `
+    <Speedometer
+      value={333}
+      segmentValueFormatter={segmentValueFormatter}
+    />
+  `,
+  Component: Speedometer,
+  props: {
+    value: 333,
+    segmentValueFormatter,
+    needleTransitionDuration: 4000,
+    needleTransition: "easeElastic",
+    currentValueText: "Current Value: ${value}",
+    textColor,
+    paddingHorizontal: 35,
+  },
+})
+
 export const CustomCurrentValueText = () => ({
   Usage: `
-    <ReactSpeedometer
+    <Speedometer
       value={333}
       needleColor="steelblue"
       needleTransitionDuration={4000}
@@ -313,8 +352,9 @@ export const ConfigureNeedleLengthAndFontSizes = () => ({
   },
 })
 
-export const GradientEffectWithLargeNumberOfSegmentsAndMaxSegmentLabelsConfig = () => ({
-  Usage: `
+export const GradientEffectWithLargeNumberOfSegmentsAndMaxSegmentLabelsConfig =
+  () => ({
+    Usage: `
     <Speedometer
       needleHeightRatio={0.7}
       maxSegmentLabels={5}
@@ -322,15 +362,15 @@ export const GradientEffectWithLargeNumberOfSegmentsAndMaxSegmentLabelsConfig = 
       value={333}
     />
   `,
-  Component: Speedometer,
-  props: {
-    needleHeightRatio: 0.7,
-    maxSegmentLabels: 5,
-    segments: 5555,
-    value: 333,
-    textColor,
-  },
-})
+    Component: Speedometer,
+    props: {
+      needleHeightRatio: 0.7,
+      maxSegmentLabels: 5,
+      segments: 5555,
+      value: 333,
+      textColor,
+    },
+  })
 
 export const NoSegmentLabels = () => ({
   Usage: `

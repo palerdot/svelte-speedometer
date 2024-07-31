@@ -73,6 +73,8 @@ declare module "svelte-speedometer" {
     textColor?: string
 
     valueFormat?: string
+    segmentValueFormatter?: (value: string) => string
+
     currentValueText?: string
     currentValuePlaceholderStyle?: string
 
