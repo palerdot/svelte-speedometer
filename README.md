@@ -29,6 +29,9 @@ import Speedometer from "svelte-speedometer"
 <Speedometer />
 ```
 
+Stackblitz: https://stackblitz.com/edit/svelte-speedometer-svelte-v5
+Storybook: https://palerdot.in/svelte-speedometer/?path=/docs/svelte-speedometer--docs
+
 ## Ports:
 - React: [react-d3-speedometer](https://github.com/palerdot/react-d3-speedometer)
 - Vue: [vue-speedometer](https://github.com/palerdot/vue-speedometer)
