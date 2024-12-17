@@ -14,7 +14,7 @@
   // START: Runes
   const props = $props()
   // state
-  const forceRender = $state.frozen(props.forceRender)
+  const forceRender = $state.raw(props.forceRender)
   let isMounted = $state(false)
   //END: Runes
 
