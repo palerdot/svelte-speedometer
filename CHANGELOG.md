@@ -3,6 +3,7 @@
 ## v3.1.0
 
 - `Svelte v5 stable`: https://github.com/palerdot/svelte-speedometer/pull/56 (and other package updates)
+- Svelte peer dependencies updated to `v5.14.0`
 - Changed `state.frozen` -> `state.raw` https://github.com/palerdot/svelte-speedometer/pull/55
 
 ## v3.0.1
